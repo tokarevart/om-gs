@@ -1,6 +1,8 @@
 pub use std::ops::Range;
 
 pub fn search(range: Range<f64>, eps: f64, f: impl Fn(f64) -> f64) -> f64 {
+    assert!(eps > 0.0);
+
     let invphi = 2.0 / (1.0 + 5.0f64.sqrt());
     let invphi2 = invphi.powi(2);
 
